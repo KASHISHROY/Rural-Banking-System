@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>User — Rural Banking</title>
+  <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+  <header class="header"><h1>Transactions — User Portal</h1></header>
+  <main class="container">
+    <div class="card">
+      <h2>Authenticate</h2>
+      <form id="authForm">
+        <label>User ID</label><input id="userId" required value="user-001">
+        <label>PIN</label><input id="pin" type="password" value="1234">
+        <div style="display:flex;gap:8px;align-items:center;">
+          <input id="otp" placeholder="OTP">
+          <button class="btn" id="btnRequestOtp">Request OTP</button>
+        </div>
+        <div style="margin-top:8px;"><button class="btn" id="btnVerify">Verify & Start Session</button></div>
+      </form>
+      <div id="authMsg" class="result-box"></div>
+    </div>
+
+    <div class="card" id="txnCard" style="display:none;">
+      <h2>New Transaction</h2>
+      <form id="txnForm">
+        <label>Amount (₹)</label><input id="amount" type="number" required>
+        <label>Category</label>
+        <select id="category"><option>grocery</option><option>agri_supply</option><option>utilities</option><option>pharmacy</option><option>electronics</option><option>others</option></select>
+        <label>Device ID</label><input id="deviceId" readonly>
+        <label>Village Code</label><input id="village" readonly>
+        <label><input id="offline" type="checkbox"> Store Offline (simulate no-network)</label>
+        <div style="margin-top:8px;"><button class="btn" id="btnSendTxn">Submit Transaction</button></div>
+      </form>
+      <div id="txnMsg" class="result-box"></div>
+    </div>
+  </main>
+  <script src="/assets/app_user.js"></script>
+</body>
+</html>

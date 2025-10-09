@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Admin — Rural Banking</title>
+  <link rel="stylesheet" href="/assets/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header class="header"><h1>Admin Dashboard</h1></header>
+  <main class="container">
+    <div class="card">
+      <h2>Admin Login</h2>
+      <form id="adminLogin">
+        <label>PIN</label><input id="adminPin" type="password">
+        <label>Role</label><select id="adminRole"><option value="manager">Manager</option><option value="auditor">Auditor</option></select>
+        <div style="margin-top:8px;"><button class="btn" id="btnAdminLogin">Login</button></div>
+      </form>
+      <div id="adminMsg" class="result-box"></div>
+    </div>
+
+    <div id="dashboard" style="display:none;">
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <h2>Transactions</h2>
+          <div><button class="btn" id="btnSync">Sync Offline</button> <button class="btn" id="btnExport">Export CSV</button></div>
+        </div>
+        <table id="txnTable" class="txn-table"><thead><tr><th>ID</th><th>User</th><th>Amount</th><th>Category</th><th>Status</th><th>Device/Village</th><th>Timestamp</th></tr></thead><tbody></tbody></table>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 380px;gap:12px;align-items:start;">
+        <div class="card"><h3>Audit Trail</h3><div id="auditTrail" class="offline-box"></div></div>
+        <div class="card"><h3>Analytics</h3><canvas id="chart" width="300" height="250"></canvas></div>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/app_admin.js"></script>
+</body>
+</html>
