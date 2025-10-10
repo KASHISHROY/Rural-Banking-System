@@ -1,4 +1,4 @@
-Professional SIH prototype - Express + SQLite
+prototype - Express + SQLite
 Run locally:
 1. unzip and cd into folder
 2. npm install
